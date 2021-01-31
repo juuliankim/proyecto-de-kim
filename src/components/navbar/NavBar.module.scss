@@ -1,0 +1,22 @@
+.navbar {
+    background: rgb(226, 164, 164);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    div {
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+    ul {
+        display: flex;
+        li {
+            margin-right: 0.5rem;
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}
