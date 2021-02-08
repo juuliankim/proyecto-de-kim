@@ -1,7 +1,7 @@
 import ItemCountComponent from "../../components/ItemCount"
 import productList from "../../mocks/productsList"
-import ItemList from "../../components/ItemList"
 import React, { useState } from "react";
+import ItemListComponent from "../../components/ItemList";
 
 const ItemListContainer = (props) => {
 
@@ -17,18 +17,10 @@ const ItemListContainer = (props) => {
 
     return (
         <>
-        <ItemList producto={producto}/>
+        <ItemListComponent producto={producto}/>
         <ItemCountComponent descripcion={"tenemos en Stock"} stock={10} inicial={1}/>
         </>
     )
 }
 
 export default ItemListContainer
-
-// useEffect(() => {
-//     fetch('https:api.mercadopago.com/checkout/preferences', {
-//         method: 'POST',
-//         headers: 
-//     }
-//     ) 
-// })
