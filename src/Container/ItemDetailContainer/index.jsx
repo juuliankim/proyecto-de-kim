@@ -1,11 +1,12 @@
 import ItemDetail from "../../components/ItemDetail"
 import listaProducto from "../../mocks/listaProducto"
+import React, { useState } from 'react'
 
 const ItemDetailContainer = () => {
 
     const [detail, setDetail] = useState([]);
 
-    useEffect(() => {
+    React.useEffect(() => {
         const getItems = new Promise((resolve, reject) => {
             setTimeout(() => resolve(listaProducto[0]), 3000);
         });
