@@ -1,5 +1,5 @@
 import ItemCountComponent from "../../components/ItemCount"
-import productList from "../../mocks/productsList"
+import listaProducto from "../../mocks/listaProducto"
 import React, { useState } from "react";
 import ItemListComponent from "../../components/ItemList";
 
@@ -9,7 +9,7 @@ const ItemListContainer = (props) => {
 
     React.useEffect(() => {
         const promesa = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(productList), 2000);
+            setTimeout(() => resolve(listaProducto), 2000);
         });
         
         promesa.then((result) => setProducto(result));

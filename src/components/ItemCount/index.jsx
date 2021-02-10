@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import ItemListComponent from "../ItemList"
 
 const ItemCountComponent = ({stock, descripcion, inicial}) => {
     const [contador, setContador] = useState(inicial);
@@ -19,10 +18,9 @@ const ItemCountComponent = ({stock, descripcion, inicial}) => {
 
     return (
         <>
-        <ItemListComponent/>
         <button onClick={resta}>-</button>
         <b>{contador}</b>
-        <button onClick={() => {onAdd(stock)}}>+</button>
+        <button onClick={onAdd}>+</button>
         <div>
         <b>{descripcion}:{stock}</b>
         </div>
