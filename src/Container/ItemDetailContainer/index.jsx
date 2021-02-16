@@ -1,27 +1,24 @@
-import ItemDetail from "../../components/ItemDetail"
-import listaProducto from "../../mocks/listaProducto"
 import React, { useState } from 'react'
+import listaProducto from "../../mocks/listaProducto"
+import ItemDetailComponent from "../../components/ItemDetail"
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (props) => {
 
-    const [detail, setDetail] = useState([]);
+    const [producto, setProducto] = useState([])
 
     React.useEffect(() => {
-        const getItems = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(listaProducto[0]), 3000);
+        const promesa = new Promise((resolve, reject) => {
+            setTimeout(() => resolve(listaProducto), 2000);
         });
-
-        getItems.then((result) => setDetail(result));
-
+        
+        promesa.then((result) => setProducto(result));
     }, [])
 
-    console.log(detail);
-    
     return (
         <>
-        <ItemDetail detail={detail} />
+        <ItemDetailComponent producto={producto}/>
         </>
-    );
-};
+    )
+}
     
 export default ItemDetailContainer

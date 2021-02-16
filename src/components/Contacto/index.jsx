@@ -1,6 +1,10 @@
+
 const ContactoComponent = () => {
     return (
+        <>
         <h1>Contacto</h1>
+        
+        </>
     )
 }
 

@@ -8,7 +8,7 @@ const ItemComponent = ({producto}) => {
             <img src={producto.url} alt="" width="300" height="300"/>
             <p>Precio: {producto.precio}</p>
             <p>Stock: {producto.stock}</p>
-            <Link to={'/tienda/${producto.nombre}'} >Ver mas</Link>
+            <Link to={`/tienda/${producto.nombre}`} >Ver mas</Link>
         </div>
     )
 }

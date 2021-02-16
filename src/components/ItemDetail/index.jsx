@@ -1,22 +1,27 @@
-import React from 'react';
-import ItemCountComponent from "../../components/ItemCount"
+import { useParams } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import listaProducto from "../../mocks/listaProducto"
 
-const ItemDetail = ({detail}) => {
+const ItemDetailComponent = () => {
+
+    const {nombreProducto} = useParams()
+    const [precio, setPrecio] = useState([])
+
+    useEffect(() => {
+        let precios = listaProducto.filter((element) => {
+            if(nombreProducto == element.nombre) {
+                return element.precio
+            }
+        })
+        setPrecio(precios[0].precio)
+    }, [nombreProducto])
 
     return (
-        <>
         <div>
-            <h3>{detail.nombre}</h3>
-            <img src={detail.url} alt="" width="400" height="550"/>
-            <p>Precio: {detail.precio}</p>
-            <p>Descripcion: {detail.descripcion}</p>
+            <h2>{nombreProducto}</h2>
+            <h3>{precio.precio}</h3>
         </div>
-        <div>
-            <ItemCountComponent descripcion={"tenemos en Stock"} stock={detail.stock} inicial={1}/>
-        </div>
-        </>
     )
-
 }
 
-export default ItemDetail
+export default ItemDetailComponent
