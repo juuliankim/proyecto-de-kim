@@ -1,7 +1,7 @@
-import ItemCountComponent from "../../components/ItemCount"
+
 import listaProducto from "../../mocks/listaProducto"
-import React, { useState } from "react";
-import ItemListComponent from "../../components/ItemList";
+import React, { useState } from "react"
+import ItemListComponent from "../../components/ItemList"
 
 const ItemListContainer = (props) => {
 
@@ -18,7 +18,6 @@ const ItemListContainer = (props) => {
     return (
         <>
         <ItemListComponent producto={producto}/>
-        <ItemCountComponent descripcion={"tenemos en Stock"} stock={10} inicial={1}/>
         </>
     )
 }

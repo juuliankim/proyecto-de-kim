@@ -1,9 +1,12 @@
-import './App.css';
-import NavbarComponent from './components/navbar';
-import ItemListContainer from './Container/ItemListContainer';
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ItemDetailContainer from './Container/ItemDetailContainer';
+import './App.css'
+import NavbarComponent from './components/navbar'
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import HomeComponent from './components/Home'
+import ShopComponent from './components/Shop'
+import ContactoComponent from './components/Contacto'
+import CarritoComponent from './components/Carrito'
+import ItemDetailContainer from './components/ItemDetail'
 
 const App = () => {
   return (
@@ -12,8 +15,18 @@ const App = () => {
     <NavbarComponent/>
       <Switch>
         <Route exact path="/">
-          <ItemListContainer greeting="Pagina en proceso"/>
-          <ItemDetailContainer/>
+          <HomeComponent/>
+        </Route>
+        <Route exact path="/tienda">
+          <ShopComponent/>
+        </Route>
+        <Route exact path="/tienda/:id">
+        </Route>
+        <Route exact path="/contacto">
+          <ContactoComponent/>
+        </Route>
+        <Route exact path="/carrito">
+          <CarritoComponent/>
         </Route>
       </Switch>
     {/* FOOTER */}

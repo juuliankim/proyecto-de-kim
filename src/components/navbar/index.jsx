@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartWidgetComponent from "../cart-widget";
 import MenuIcon from "./menu";
 import {menu, subMenu, menuResponsive} from "./NavBar.module.scss";
@@ -7,17 +8,17 @@ const NavbarComponent = () => {
         <nav>
             <span>Bella</span>
             <ul className={menu}>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Tienda</a>
+                <li><Link to={'/'}>Inicio</Link></li>
+                <li><Link to={'/tienda'}>Tienda</Link>
                     <ul className={subMenu}>
-                        <li><a href="">categoria 1</a></li>
-                        <li><a href="">categoria 2</a></li>
-                        <li><a href="">categoria 3</a></li>
-                        <li><a href="">categoria 4</a></li>
+                        <li><Link to={'/'}>Categoria1</Link></li>
+                        <li><Link to={'/'}>Categoria2</Link></li>
+                        <li><Link to={'/'}>Categoria3</Link></li>
+                        <li><Link to={'/'}>Categoria4</Link></li>
                     </ul> 
                 </li>
-                <li><a href="">Contacto</a></li>
-                <li><a href=""><CartWidgetComponent/></a></li>
+                <li><Link to={'/contacto'}>Contacto</Link></li>
+                <li><Link to={'/carrito'}><CartWidgetComponent/></Link></li>
                 <li className={menuResponsive}><MenuIcon/></li>
             </ul>
         </nav>
