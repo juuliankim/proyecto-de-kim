@@ -6,7 +6,7 @@ import HomeComponent from './components/Home'
 import ShopComponent from './components/Shop'
 import ContactoComponent from './components/Contacto'
 import CarritoComponent from './components/Carrito'
-import ItemDetailContainer from './Container/ItemDetailContainer'
+import ItemDetailComponent from './Container/ItemDetailContainer'
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
           <ShopComponent/>
         </Route>
         <Route path="/tienda/:nombreProducto">
-          <ItemDetailContainer/>
+          <ItemDetailComponent/>
         </Route>
         <Route exact path="/contacto">
           <ContactoComponent/>
