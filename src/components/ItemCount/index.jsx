@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const ItemCountComponent = ({stock, descripcion, inicial}) => {
+const ItemCountComponent = ({onAdd, stock, descripcion, inicial}) => {
 
     const [contador, setContador] = useState(inicial);
 
@@ -16,11 +16,7 @@ const ItemCountComponent = ({stock, descripcion, inicial}) => {
         if(contador > inicial)
         setContador(contador - 1)
     }
-    
-    const onAdd = () => {
-        console.log ('Ud selecciono ', contador)
-    }
-
+   
     return (
         <>
         <button onClick={decrementar}>-</button>
