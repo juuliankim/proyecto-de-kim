@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
 import listaProducto from "../../mocks/listaProducto"
 import ItemDetailComponent from "../../components/ItemDetail"
+import { useParams } from "react-router-dom"
+import { useEffect, useState } from 'react'
 
 const ItemDetailContainer = (props) => {
 
-    const [producto, setProducto] = useState([])
+    const [producto, setProducto] = useState({})
 
-    React.useEffect(() => {
-        const promesa = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(listaProducto), 2000);
-        });
-        
-        promesa.then((result) => setProducto(result));
+    const {nombreProducto} = useParams()
+
+    useEffect(() => {
+        listaProducto.then((resp) => {
+            setProducto(resp.find((li) => li.nombre === nombreProducto))
+        })
     }, [])
 
     return (

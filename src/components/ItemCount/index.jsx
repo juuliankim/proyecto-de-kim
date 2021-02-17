@@ -1,9 +1,10 @@
 import React, { useState } from "react"
 
 const ItemCountComponent = ({stock, descripcion, inicial}) => {
+
     const [contador, setContador] = useState(inicial);
 
-    const onAdd = () => {
+    const incrementar = () => {
         if(contador < stock) {
             setContador(contador + 1)
         }else{
@@ -11,21 +12,25 @@ const ItemCountComponent = ({stock, descripcion, inicial}) => {
         }
     }
 
-    const resta = () => {
+    const decrementar = () => {
         if(contador > inicial)
         setContador(contador - 1)
+    }
+    
+    const onAdd = () => {
+        console.log ('Ud selecciono ', contador)
     }
 
     return (
         <>
-        <button onClick={resta}>-</button>
+        <button onClick={decrementar}>-</button>
         <b>{contador}</b>
-        <button onClick={onAdd}>+</button>
+        <button onClick={incrementar}>+</button>
         <div>
         <b>{descripcion}:{stock}</b>
         </div>
         <div>
-        <button>Comprar</button>
+        <button onClick={onAdd}>Comprar</button>
         </div>
         </>
     )
