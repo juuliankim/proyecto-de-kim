@@ -5,13 +5,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import HomeComponent from './components/Home'
 import ShopComponent from './components/Shop'
 import ContactoComponent from './components/Contacto'
-import CarritoComponent from './components/Carrito'
+import CartComponent from './components/Cart'
 import ItemDetailComponent from './Container/ItemDetailContainer'
+import CartContext from './context/CartContext'
 
 const App = () => {
   return (
-    <>
     <BrowserRouter>
+    <CartContext>
     <NavbarComponent/>
       <Switch>
         <Route exact path="/">
@@ -27,12 +28,12 @@ const App = () => {
           <ContactoComponent/>
         </Route>
         <Route exact path="/carrito">
-          <CarritoComponent/>
+          <CartComponent/>
         </Route>
       </Switch>
     {/* FOOTER */}
+    </CartContext>
     </BrowserRouter>
-    </>
   );
 }
 

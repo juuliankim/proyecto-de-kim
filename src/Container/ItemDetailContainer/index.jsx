@@ -3,6 +3,7 @@ import ItemDetailComponent from "../../components/ItemDetail"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from 'react'
 
+
 const ItemDetailContainer = (props) => {
 
     const [producto, setProducto] = useState({})
