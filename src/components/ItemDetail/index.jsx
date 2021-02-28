@@ -13,7 +13,7 @@ const ItemDetailComponent = ({producto, contador}) => {
     const onAdd = (contador) => {
         console.log ('Ud selecciono ', contador)
         setCarrito(true)
-        addCart({producto: producto, quantity: contador})
+        addCart([...cart, [{producto: producto, quantity: contador}]])
     }
     console.log(cart)
     return (
