@@ -9,7 +9,7 @@ const ItemDetailContainer = (props) => {
     const [producto, setProducto] = useState({})
 
     const {nombreProducto} = useParams()
-
+   
     useEffect(() => {
         listaProducto.then((resp) => {
             setProducto(resp.find((li) => li.nombre === nombreProducto))

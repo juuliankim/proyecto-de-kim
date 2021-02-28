@@ -17,6 +17,10 @@ const ItemCountComponent = ({onAdd, stock, descripcion, inicial}) => {
         setContador(contador - 1)
     }
    
+    const handlerOnAdd = () => {
+        onAdd(contador)
+    }
+
     return (
         <>
         <button onClick={decrementar}>-</button>
@@ -26,7 +30,7 @@ const ItemCountComponent = ({onAdd, stock, descripcion, inicial}) => {
         <b>{descripcion}:{stock}</b>
         </div>
         <div>
-        <button onClick={onAdd}>Comprar</button>
+        <button onClick={handlerOnAdd}>Comprar</button>
         </div>
         </>
     )

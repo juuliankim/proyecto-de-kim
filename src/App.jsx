@@ -7,12 +7,12 @@ import ShopComponent from './components/Shop'
 import ContactoComponent from './components/Contacto'
 import CartComponent from './components/Cart'
 import ItemDetailComponent from './Container/ItemDetailContainer'
-import CartContext from './context/CartContext'
+import CartProvider from './context/CartContext'
 
 const App = () => {
   return (
     <BrowserRouter>
-    <CartContext>
+    <CartProvider>
     <NavbarComponent/>
       <Switch>
         <Route exact path="/">
@@ -32,7 +32,7 @@ const App = () => {
         </Route>
       </Switch>
     {/* FOOTER */}
-    </CartContext>
+    </CartProvider>
     </BrowserRouter>
   );
 }
