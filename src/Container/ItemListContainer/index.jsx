@@ -1,4 +1,4 @@
-
+import { row } from './ItemListContainer.module.scss'
 import listaProducto from "../../mocks/listaProducto"
 import React, { useState, useEffect } from "react"
 import ItemListComponent from "../../components/ItemList"
@@ -29,7 +29,9 @@ const ItemListContainer = (props) => {
 
     return (
         <>
-        <ItemListComponent producto={producto}/>
+        <div className={row}>
+            <ItemListComponent producto={producto}/>
+        </div>
         </>
     )
 }

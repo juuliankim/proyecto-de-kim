@@ -1,8 +1,9 @@
 import ItemComponent from "../Item"
+import { row } from './ItemList.module.scss'
 
 const ItemListComponent = ({producto}) => {
     return (
-        <div>
+        <div className={row}>
             {producto.map((producto) => {
                 return <ItemComponent key={producto.id} producto={producto}/>
             })}

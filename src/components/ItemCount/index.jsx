@@ -1,6 +1,7 @@
+import { AddShoppingCart } from "@material-ui/icons";
 import React, { useState } from "react"
 
-const ItemCountComponent = ({onAdd, stock, descripcion, inicial}) => {
+const ItemCountComponent = ({onAdd, stock, descripcion, inicial, producto}) => {
 
     const [contador, setContador] = useState(inicial);
 
@@ -23,9 +24,9 @@ const ItemCountComponent = ({onAdd, stock, descripcion, inicial}) => {
 
     return (
         <>
-        <button onClick={decrementar}>-</button>
+        {/* <button onClick={decrementar}>-</button>
         <b>{contador}</b>
-        <button onClick={incrementar}>+</button>
+        <button onClick={incrementar}>+</button> */}
         <div>
         <b>{descripcion}:{stock}</b>
         </div>
