@@ -38,5 +38,3 @@ const CartProvider = ({children}) => {
 }
 
 export default CartProvider
-
-//const { listProduct, setListProducts } = useContext(ProductContext)

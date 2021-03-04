@@ -19,10 +19,10 @@ const ItemDetailComponent = ({producto, contador}) => {
     return (
         <>
             <div>
-                <h2>{producto.nombre}</h2>
-                <img src={producto.url} alt="" width="400" height="550"/>
-                <p>Precio: {producto.precios}</p>
-                <p>Descripcion: {producto.descripcion}</p>
+                <h2>{producto.title}</h2>
+                <img src={producto.image} alt="" width="400" height="550"/>
+                <p>Precio: {producto.price}</p>
+                <p>Descripcion: {producto.description}</p>
             </div>
             <div>
             {carrito ? <Link to={'/carrito'}><button>Ir al Carrito</button></Link> : <ItemCountComponent onAdd={onAdd} descripcion={"tenemos en Stock"} stock={producto.stock} inicial={1} contador={contador}/> }
